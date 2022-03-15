@@ -1,3 +1,4 @@
 name: Jay Orten
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+baseurl: /jayorten.github.io
