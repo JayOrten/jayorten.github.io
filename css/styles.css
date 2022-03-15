@@ -70,7 +70,7 @@ ul.posts li {
 }
 
 .container {
-    flex:1;
+    flex:1; /* remove this to not push footer to bottom */
 }
 
 .source {
