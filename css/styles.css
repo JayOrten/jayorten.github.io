@@ -49,6 +49,12 @@ h1 {
     letter-spacing: 0.05em;
 }
 
+h2 {
+    font-size: 1.7em;
+    font-weight: 200;
+    letter-spacing: 0.03em;
+}
+
 p {
     font-size: 1.5em;
     line-height: 1.4em;
