@@ -60,7 +60,7 @@ h3 {
     font-size: 2em;
     font-weight: 200;
     letter-spacing: 0.05em;
-    line-height: 15px;
+    margin-bottom: 5px;
 }
 
 p {
@@ -122,5 +122,5 @@ ul.posts li {
 }
 
 .section {
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
