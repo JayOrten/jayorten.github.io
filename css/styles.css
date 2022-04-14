@@ -120,3 +120,7 @@ ul.posts li {
 .contactList {
     justify-content: space-evenly;
 }
+
+.section {
+    margin-bottom: 50px;
+}
