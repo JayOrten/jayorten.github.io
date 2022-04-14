@@ -60,7 +60,7 @@ h3 {
     font-size: 2em;
     font-weight: 200;
     letter-spacing: 0.05em;
-    line-height: 45px;
+    line-height: 15px;
 }
 
 p {
@@ -97,7 +97,7 @@ ul.posts li {
     letter-spacing: 0.05em;
 }
 
-.itemList {
+.skillList {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -105,4 +105,18 @@ ul.posts li {
     padding: 0px;
     list-style: none;
     font-size: 1.3em;
+}
+
+.courseList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.3em;
+    gap: 10px;
+}
+
+.contactList {
+    justify-content: space-evenly;
 }
