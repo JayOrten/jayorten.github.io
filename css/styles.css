@@ -55,6 +55,13 @@ h2 {
     letter-spacing: 0.05em;
 }
 
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight:100;
+    letter-spacing: 0.05em;
+}
+
 p {
     font-size: 1.5em;
     line-height: 1.4em;
@@ -81,4 +88,18 @@ ul.posts li {
 
 .source {
     font-size: xx-small;
+}
+
+.smallText {
+    text-align: center;
+    font-size: x-small;
+    letter-spacing: 0.05em;
+}
+
+.itemList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px;
 }
