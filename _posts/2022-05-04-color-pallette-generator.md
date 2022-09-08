@@ -5,6 +5,9 @@ date: 2022-05-04
 ---
 
 ---
+
+![color-pallette-generator]({{ site.baseurl }}/assets/images/colorpallette.jpg)
+
 A simple color pallette generator built with VueJS.
 
 [Check it out here](https://jayorten.github.io/colorPalleteGenerator/)
