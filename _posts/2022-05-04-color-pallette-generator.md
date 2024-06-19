@@ -6,7 +6,7 @@ date: 2022-05-04
 
 ---
 
-![color-pallette-generator]({{ site.baseurl }}/assets/images/colorpallette.jpg)
+![color-pallette-generator]({{ site.baseurl }}/assets/images/colorpallette.png)
 
 A simple color pallette generator built with VueJS.
 

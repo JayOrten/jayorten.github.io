@@ -2,9 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\about",
+    "\\blog",
+    "\\css",
+    "\\resume",
     "\\_layouts",
     "\\_posts"
   ],
-  "SelectedNode": "\\_posts",
+  "SelectedNode": "\\resume\\index.html",
   "PreviewInSolutionExplorer": false
 }
