@@ -1,58 +1,207 @@
+/* ===== Catppuccin Frappe Palette ===== */
+:root {
+    --crust: #232634;
+    --mantle: #292c3c;
+    --base: #303446;
+    --surface0: #414559;
+    --surface1: #51576d;
+    --surface2: #626880;
+    --overlay0: #737994;
+    --overlay1: #838ba7;
+    --overlay2: #949cbb;
+    --subtext0: #a5adce;
+    --subtext1: #b5bfe2;
+    --text: #c6d0f5;
+    --lavender: #babbf1;
+    --blue: #8caaee;
+    --sapphire: #85c1dc;
+    --sky: #99d1db;
+    --teal: #81c8be;
+    --green: #a6d189;
+    --yellow: #e5c890;
+    --peach: #ef9f76;
+    --maroon: #ea999c;
+    --red: #e78284;
+    --mauve: #ca9ee6;
+    --pink: #f4b8e4;
+    --flamingo: #eebebe;
+    --rosewater: #f2d5cf;
+}
+
+/* ===== Stars Background ===== */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200vh); }
+}
+
+html {
+    min-height: 100%;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Small star layer */
+body::before {
+    background-image:
+        radial-gradient(1px 1px at 10% 15%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 25% 35%, var(--subtext0) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 10%, var(--lavender) 50%, transparent 100%),
+        radial-gradient(1px 1px at 55% 45%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 70% 20%, var(--sky) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 55%, var(--blue) 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 65%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 30% 80%, var(--subtext0) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 50% 70%, var(--mauve) 50%, transparent 100%),
+        radial-gradient(1px 1px at 65% 85%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 80% 40%, var(--sapphire) 50%, transparent 100%),
+        radial-gradient(1px 1px at 95% 75%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 5% 90%, var(--lavender) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 45% 95%, var(--sky) 50%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 20% 50%, var(--subtext1) 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 30%, var(--text) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 35% 25%, var(--pink) 50%, transparent 100%),
+        radial-gradient(1px 1px at 60% 5%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 8% 42%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 52% 28%, var(--subtext0) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 73% 52%, var(--lavender) 50%, transparent 100%),
+        radial-gradient(1px 1px at 88% 68%, var(--text) 50%, transparent 100%),
+        radial-gradient(1px 1px at 33% 92%, var(--sky) 50%, transparent 100%),
+        radial-gradient(1px 1px at 18% 78%, var(--text) 50%, transparent 100%);
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+/* Larger accent star layer */
+body::after {
+    background-image:
+        radial-gradient(2px 2px at 12% 22%, var(--blue) 50%, transparent 100%),
+        radial-gradient(2.5px 2.5px at 48% 38%, var(--mauve) 50%, transparent 100%),
+        radial-gradient(2px 2px at 78% 12%, var(--sapphire) 50%, transparent 100%),
+        radial-gradient(2px 2px at 32% 68%, var(--lavender) 50%, transparent 100%),
+        radial-gradient(2.5px 2.5px at 62% 82%, var(--sky) 50%, transparent 100%),
+        radial-gradient(2px 2px at 92% 48%, var(--pink) 50%, transparent 100%),
+        radial-gradient(2px 2px at 22% 92%, var(--blue) 50%, transparent 100%),
+        radial-gradient(2.5px 2.5px at 55% 55%, var(--teal) 50%, transparent 100%);
+    animation: twinkle 6s ease-in-out infinite alternate-reverse;
+}
+
+/* ===== Base Styles ===== */
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    margin: 60px auto;
-    width: 50%;
-    font-family: 'Alegrya', serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 60px 0;
+    font-family: 'Alegreya', serif;
     font-weight: 200;
-    background-color: #F9F7F7;
+    background-color: var(--base);
+    color: var(--text);
+    box-sizing: border-box;
 }
+
+body > * {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== Navigation ===== */
+nav {
+    border-bottom: 1px solid var(--surface1);
+    margin-bottom: 20px;
+}
+
 nav ul, footer ul {
     display: flex;
-    padding: 0px;
+    padding: 0;
     list-style: none;
-
 }
+
 nav ul li, footer ul li {
     display: flex;
     height: 5vh;
     margin-right: 40px;
     align-items: center;
-
 }
 
-nav ul li img {
-    height: 100%;
+nav ul li strong {
+    color: var(--mauve);
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 20px rgba(202, 158, 230, 0.3);
+}
+
+nav ul li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--mauve));
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
     width: 100%;
-    object-fit: contain;
 }
 
+/* ===== Links ===== */
 a {
     text-decoration: none;
-    color: rgb(99, 119, 128);
+    color: var(--blue);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 a:hover {
-    text-decoration: underline;
-    text-decoration-color: #112D4E;
-    color: #3F72AF;
+    text-decoration: none;
+    color: var(--lavender);
+    text-shadow: 0 0 12px rgba(140, 170, 238, 0.4);
 }
 
+/* ===== Typography ===== */
 strong {
     font-size: larger;
+    color: var(--text);
 }
 
 h1 {
     font-size: 2em;
     font-weight: 300;
     letter-spacing: 0.05em;
+    color: var(--lavender);
+    text-shadow: 0 0 30px rgba(186, 187, 241, 0.2);
 }
 
 h2 {
     font-size: 1.7em;
     font-weight: 100;
     letter-spacing: 0.05em;
+    color: var(--sapphire);
 }
 
 h3 {
@@ -61,44 +210,146 @@ h3 {
     font-weight: 200;
     letter-spacing: 0.05em;
     margin-bottom: 5px;
+    color: var(--sky);
 }
 
 p {
     font-size: 1.2em;
-    line-height: 1.4em;
-    color: #333;
+    line-height: 1.6em;
+    color: var(--subtext1);
 }
 
 li {
     font-size: 1.1em;
+    color: var(--subtext0);
 }
 
+/* ===== Profile Image ===== */
+.profile {
+    border-radius: 50%;
+    border: 3px solid var(--surface1);
+    box-shadow: 0 0 25px rgba(140, 170, 238, 0.15), 0 0 50px rgba(202, 158, 230, 0.08);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.profile:hover {
+    border-color: var(--blue);
+    box-shadow: 0 0 30px rgba(140, 170, 238, 0.3), 0 0 60px rgba(202, 158, 230, 0.15);
+}
+
+/* ===== Blurb / Home Section ===== */
+.blurb {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.blurb .column:first-child {
+    flex-shrink: 0;
+}
+
+/* ===== Footer ===== */
 footer {
-    border-top: 4px double #3F72AF;
-    font-size: .8em;
+    border-top: 1px solid var(--surface1);
+    padding-top: 10px;
+    margin-top: auto;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
+footer ul {
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+footer ul li {
+    margin-right: 0;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--surface0);
+    color: var(--subtext0);
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    background: var(--surface1);
+    color: var(--blue);
+    box-shadow: 0 0 15px rgba(140, 170, 238, 0.3);
+    transform: translateY(-2px);
+}
+
+footer a i {
+    line-height: 1;
+}
+
+/* ===== Blog Posts List ===== */
+ul.posts {
+    margin: 20px auto 40px;
+    font-size: 1.3em;
+    padding: 0;
 }
 
 ul.posts li {
     list-style: none;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
+ul.posts li:hover {
+    background: var(--surface0);
+    border-color: var(--surface1);
+}
+
+ul.posts li span {
+    color: var(--overlay1);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75em;
+}
+
+/* ===== Post Content ===== */
+.post {
+    line-height: 1.8;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--surface1);
+}
+
+p.meta {
+    color: var(--overlay1);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+    margin-top: -10px;
+}
+
+/* ===== Container ===== */
 .container {
-    flex:1; /* remove this to not push footer to bottom */
+    flex: 1;
 }
 
+/* ===== Misc Classes ===== */
 .source {
     font-size: xx-small;
+    color: var(--overlay0);
 }
 
 .smallText {
     text-align: center;
     font-size: x-small;
     letter-spacing: 0.05em;
+    color: var(--overlay0);
 }
 
 .skillList {
@@ -106,7 +357,7 @@ ul.posts li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0px;
+    padding: 0;
     list-style: none;
     font-size: 1.3em;
 }
@@ -115,7 +366,7 @@ ul.posts li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
+    padding: 0;
     list-style: none;
     font-size: 1.3em;
     gap: 10px;
@@ -127,4 +378,92 @@ ul.posts li {
 
 .section {
     margin-bottom: 90px;
+}
+
+/* ===== Code Blocks ===== */
+code {
+    background: var(--mantle);
+    color: var(--peach);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+pre code {
+    padding: 0;
+    background: none;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+    border-left: 3px solid var(--mauve);
+    margin-left: 0;
+    padding: 8px 20px;
+    color: var(--subtext0);
+    background: rgba(65, 69, 89, 0.3);
+    border-radius: 0 8px 8px 0;
+}
+
+/* ===== Horizontal Rule ===== */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--surface2), transparent);
+    margin: 30px 0;
+}
+
+/* ===== Selection ===== */
+::selection {
+    background: var(--surface2);
+    color: var(--text);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--mantle);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--surface1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--surface2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    body > * {
+        width: 85%;
+    }
+
+    .blurb {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    body > * {
+        width: 92%;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
 }

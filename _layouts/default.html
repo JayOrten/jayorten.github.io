@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-	
+
 	{% include header.html %}
 
 	<body>
 		<nav>
 			<ul>
-				<li><strong>Jay Orten</strong></li>
-	        	<li><a href="{{ site.baseurl }}/">Home</a></li>
-	    		<li><a href="{{ site.baseurl }}/blog">Research</a></li>
+				<li><strong><i class="fa-solid fa-rocket"></i> Jay Orten</strong></li>
+	        	<li><a href="{{ site.baseurl }}/"><i class="fa-solid fa-house"></i> Home</a></li>
+	    		<li><a href="{{ site.baseurl }}/blog"><i class="fa-solid fa-flask"></i> Research</a></li>
 			</ul>
 		</nav>
 		<div class="container">
-			
+
 		{{ content }}
-			
+
 		</div><!-- /.container -->
 		<footer>
 			<ul>
-				<li><a href="mailto:jay.orten@gmail.com" target="_blank"><img src="{{ site.baseurl }}/assets/images/envelope-solid-24.png"></a></li>
-				<li><a href="https://www.linkedin.com/in/jayorten/"_blank""><img src="{{ site.baseurl }}/assets/images/linkedin-square-logo-24.png" /></a></li>
-				<li><a href="https://github.com/jayorten/"_blank""><img src="{{ site.baseurl }}/assets/images/github-logo-24.png" /></a></li>
+				<li><a href="mailto:jay.orten@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/jayorten/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://github.com/jayorten/" target="_blank"><i class="fa-brands fa-github"></i></a></li>
 			</ul>
 		</footer>
 	</body>
