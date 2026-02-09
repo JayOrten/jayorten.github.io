@@ -3,8 +3,13 @@ layout: default
 title: Research
 ---
 <h1><i class="fa-solid fa-satellite"></i> {{ page.title }}</h1>
-<ul class="posts">
+<div class="bento-grid">
     {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_string }}</span> ~ <a href="{{ site.baseurl }}{{ post.url }}" title ="{{ post.title }}">{{ post.title }}</a></li>
+    <a href="{{ site.baseurl }}{{ post.url }}" class="bento-card">
+        <div class="bento-icon"><i class="{{ post.icon }}"></i></div>
+        <h2 class="bento-title">{{ post.title }}</h2>
+        <span class="bento-date">{{ post.date | date_to_string }}</span>
+        <p class="bento-desc">{{ post.description }}</p>
+    </a>
     {% endfor %}
-</ul>
+</div>

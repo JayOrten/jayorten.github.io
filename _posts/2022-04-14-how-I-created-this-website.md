@@ -2,6 +2,8 @@
 layout: post
 title: "How I created this website"
 date: 2022-04-14
+description: "Building a personal site with GitHub Pages and Jekyll — from static templates to a live portfolio."
+icon: "fa-solid fa-code"
 ---
 
 ---

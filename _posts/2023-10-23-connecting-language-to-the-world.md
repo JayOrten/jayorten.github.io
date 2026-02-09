@@ -2,6 +2,8 @@
 layout: post
 title: "Connecting Language to the World: Development of Natural Language Environments"
 date: 2023-10-23
+description: "Developing grounded environments where language models interact with simulated worlds."
+icon: "fa-solid fa-earth-americas"
 ---
 
 ---

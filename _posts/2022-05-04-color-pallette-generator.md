@@ -2,6 +2,8 @@
 layout: post
 title: "Color Pallette Generator"
 date: 2022-05-04
+description: "A tool that extracts dominant color palettes from images using k-means clustering."
+icon: "fa-solid fa-palette"
 ---
 
 ---
