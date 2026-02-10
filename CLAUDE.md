@@ -45,6 +45,8 @@ Jekyll static site generator converts Markdown content + HTML templates into a s
 ├── css/styles.css       # All styles (Catppuccin Frappe palette, single file)
 ├── js/fun.js            # Interactive features (3D tilt, constellation, Konami code)
 ├── assets/              # Images, PDFs, favicons
+│   ├── blog/            # Images published from ~/org/posts/images/
+│   └── reviews/         # Images published from ~/org/reviews/images/
 └── CV/                  # CV page
 ```
 
@@ -82,9 +84,28 @@ Defined in `_layouts/default.html` nav bar:
 - Constellation canvas (stars connect near cursor)
 - Konami code easter egg (rocket shower)
 
+## Org-mode Publishing Pipeline
+
+Content can be authored as org files in `~/org/` and published to this repo via Emacs.
+
+| Org source | Jekyll destination | Image assets |
+|---|---|---|
+| `~/org/posts/*.org` | `_posts/` | `assets/blog/` |
+| `~/org/reviews/*.org` | `_reviews/` | `assets/reviews/` |
+
+**Publish command:** `SPC n j` or `M-x my/org-jekyll-publish` in Emacs.
+
+The custom publish function (`my/org-jekyll-publish-to-md` in Doom config) handles:
+- Generating YAML frontmatter from org keywords (`#+TITLE:`, `#+DATE:`, `#+DESCRIPTION:`, `#+ICON:`, `#+LAYOUT:`, `#+JEKYLL_TAGS:`)
+- Exporting org body to GitHub-flavored markdown via `ox-md`
+- Rewriting image paths (`images/foo.png` → `/assets/blog/foo.png` or `/assets/reviews/foo.png`)
+- Naming output files as `YYYY-MM-DD-slug.md`
+
+Full authoring docs: `~/org/ORG-PUBLISHING.org`
+
 ## Key Conventions
 
-- Post/review filenames must follow `YYYY-MM-DD-title.md` format
+- Post/review filenames must follow `YYYY-MM-DD-title.md` format (generated automatically from org publish)
 - Blog posts use `layout: post`, reviews use `layout: review`
 - Both listing pages use the bento grid card style
 - Google Analytics tracking ID: G-MVGDZ53SL2
