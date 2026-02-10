@@ -233,8 +233,8 @@ li {
 
 /* ===== Profile Image ===== */
 .profile {
-    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-    border: none;
+    border-radius: 50%;
+    border: 3px solid var(--surface1);
     box-shadow: 0 0 25px rgba(140, 170, 238, 0.15), 0 0 50px rgba(202, 158, 230, 0.08);
     transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.15s ease;
     will-change: transform;
@@ -279,7 +279,7 @@ footer a {
     justify-content: center;
     width: 42px;
     height: 42px;
-    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    border-radius: 50%;
     background: var(--surface0);
     color: var(--subtext0);
     font-size: 1.2em;
@@ -486,7 +486,7 @@ hr {
 .bento-card {
     display: block;
     padding: 24px;
-    border-radius: 2px;
+    border-radius: 6px;
     background: var(--surface0);
     border: 1px solid var(--surface1);
     text-decoration: none;
