@@ -139,6 +139,13 @@ nav ul li, footer ul li {
     align-items: center;
 }
 
+.nav-logo {
+    height: 1.4em;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
 nav ul li strong {
     color: var(--mauve);
     font-size: 1.2em;
