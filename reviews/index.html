@@ -1,0 +1,24 @@
+---
+layout: default
+title: Reviews
+---
+<h1><i class="fa-solid fa-star"></i> {{ page.title }}</h1>
+<div class="bento-grid">
+    {% for review in site.reviews reversed %}
+    <a href="{{ site.baseurl }}{{ review.url }}" class="bento-card">
+        <div class="bento-icon"><i class="{{ review.icon | default: 'fa-solid fa-star' }}"></i></div>
+        <h2 class="bento-title">{{ review.title }}</h2>
+        <span class="bento-date">{{ review.date | date_to_string }}</span>
+        {% if review.tags %}
+        <div class="review-tags">
+            {% for tag in review.tags %}
+            <span class="review-tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if review.description %}
+        <p class="bento-desc">{{ review.description }}</p>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<p class="meta"><i class="fa-regular fa-calendar"></i> {{ page.date | date_to_string }}</p>
+{% if page.tags %}
+<div class="review-tags">
+    {% for tag in page.tags %}
+    <span class="review-tag">{{ tag }}</span>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="post">
+    {{ content }}
+</div>

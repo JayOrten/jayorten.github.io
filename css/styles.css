@@ -521,6 +521,25 @@ hr {
     line-height: 1.5;
 }
 
+/* ===== Review Tags ===== */
+.review-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.review-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--surface1);
+    color: var(--mauve);
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+}
+
 /* ===== Konami Rocket Shower ===== */
 @keyframes rocketLaunch {
     0% {

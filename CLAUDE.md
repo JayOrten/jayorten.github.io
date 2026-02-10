@@ -27,18 +27,65 @@ Push to `main` branch → GitHub Pages automatically rebuilds and deploys.
 
 Jekyll static site generator converts Markdown content + HTML templates into a static site.
 
-**Content flow:**
-- Blog posts: `_posts/YYYY-MM-DD-title.md` (Markdown with YAML frontmatter)
-- Layouts: `_layouts/` (default.html wraps all pages, post.html for blog posts)
-- Includes: `_includes/header.html` (meta tags, analytics, CSS link)
-- Styles: `css/styles.css` (single file, Flexbox-based)
-- Static assets: `assets/images/`, `CV/pdf/`
+### Directory Structure
 
-**Configuration:** `_config.yml` sets site name, markdown processor (kramdown), permalink structure (`/blog/:year/:month/:day/:title`).
+```
+├── _config.yml          # Site config: name, markdown processor, permalinks, collections
+├── _layouts/
+│   ├── default.html     # Base layout: nav, footer, content wrapper
+│   ├── post.html        # Blog/research post layout (date + content)
+│   └── review.html      # Review layout (date + tags + content)
+├── _includes/
+│   └── header.html      # <head> tag: meta, favicon, CSS, fonts, Font Awesome, Google Analytics
+├── _posts/              # Research/blog posts (YYYY-MM-DD-title.md)
+├── _reviews/            # Review posts (YYYY-MM-DD-title.md), uses `reviews` collection
+├── blog/index.html      # Research listing page (bento grid)
+├── reviews/index.html   # Reviews listing page (bento grid with tag pills)
+├── index.html           # Home page (profile + blurb)
+├── css/styles.css       # All styles (Catppuccin Frappe palette, single file)
+├── js/fun.js            # Interactive features (3D tilt, constellation, Konami code)
+├── assets/              # Images, PDFs, favicons
+└── CV/                  # CV page
+```
+
+### Content Collections
+
+**Blog/Research (`_posts/`):**
+- Permalink: `/blog/:year/:month/:day/:title`
+- Layout: `post`
+- Frontmatter: `layout`, `title`, `date`, `description`, `icon` (Font Awesome class)
+
+**Reviews (`_reviews/`):**
+- Permalink: `/reviews/:year/:month/:day/:title`
+- Layout: `review`
+- Frontmatter: `layout`, `title`, `date`, `tags` (array), `description`, `icon` (Font Awesome class)
+- Tags are freeform strings (e.g., `movie`, `book`, `album`, `tv`) rendered as pills
+
+### Navigation
+
+Defined in `_layouts/default.html` nav bar:
+- Home (`/`)
+- Research (`/blog`)
+- Reviews (`/reviews`)
+
+### Styling
+
+- **Palette:** Catppuccin Frappe (CSS custom properties in `:root`)
+- **Fonts:** Alegreya (body), Roboto (UI), Roboto Mono (code/dates/tags)
+- **Icons:** Font Awesome 6.5.1 via CDN
+- **Background:** CSS star field with twinkle animation
+- **Layout:** Flexbox, 50% width centered (responsive breakpoints at 900px and 500px)
+
+### Interactive Features (`js/fun.js`)
+
+- 3D tilt on profile photo (mousemove)
+- Constellation canvas (stars connect near cursor)
+- Konami code easter egg (rocket shower)
 
 ## Key Conventions
 
-- Blog post filenames must follow `YYYY-MM-DD-title.md` format
-- Posts require YAML frontmatter with `layout: post` and `title:`
-- Google Fonts: Alegreya (body), Roboto/Roboto Mono (UI)
+- Post/review filenames must follow `YYYY-MM-DD-title.md` format
+- Blog posts use `layout: post`, reviews use `layout: review`
+- Both listing pages use the bento grid card style
 - Google Analytics tracking ID: G-MVGDZ53SL2
+- Catppuccin Frappe colors are used everywhere — don't introduce colors outside the palette
