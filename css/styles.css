@@ -233,8 +233,8 @@ li {
 
 /* ===== Profile Image ===== */
 .profile {
-    border-radius: 50%;
-    border: 3px solid var(--surface1);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    border: none;
     box-shadow: 0 0 25px rgba(140, 170, 238, 0.15), 0 0 50px rgba(202, 158, 230, 0.08);
     transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.15s ease;
     will-change: transform;
@@ -279,7 +279,7 @@ footer a {
     justify-content: center;
     width: 42px;
     height: 42px;
-    border-radius: 50%;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     background: var(--surface0);
     color: var(--subtext0);
     font-size: 1.2em;
@@ -290,7 +290,7 @@ footer a:hover {
     background: var(--surface1);
     color: var(--blue);
     box-shadow: 0 0 15px rgba(140, 170, 238, 0.3);
-    transform: translateY(-2px);
+    transform: translate(-2px, -2px);
 }
 
 footer a i {
@@ -308,7 +308,7 @@ ul.posts li {
     list-style: none;
     padding: 12px 16px;
     margin-bottom: 8px;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid transparent;
     transition: background 0.2s ease, border-color 0.2s ease;
 }
@@ -331,7 +331,7 @@ ul.posts li span {
 
 .post img {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid var(--surface1);
 }
 
@@ -393,7 +393,7 @@ code {
     background: var(--mantle);
     color: var(--peach);
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 2px;
     font-family: 'Roboto Mono', monospace;
     font-size: 0.9em;
 }
@@ -401,7 +401,7 @@ code {
 pre {
     background: var(--mantle);
     border: 1px solid var(--surface0);
-    border-radius: 8px;
+    border-radius: 2px;
     padding: 16px;
     overflow-x: auto;
 }
@@ -418,7 +418,7 @@ blockquote {
     padding: 8px 20px;
     color: var(--subtext0);
     background: rgba(65, 69, 89, 0.3);
-    border-radius: 0 8px 8px 0;
+    border-radius: 0;
 }
 
 /* ===== Horizontal Rule ===== */
@@ -446,7 +446,7 @@ hr {
 
 ::-webkit-scrollbar-thumb {
     background: var(--surface1);
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -486,7 +486,7 @@ hr {
 .bento-card {
     display: block;
     padding: 24px;
-    border-radius: 12px;
+    border-radius: 2px;
     background: var(--surface0);
     border: 1px solid var(--surface1);
     text-decoration: none;
@@ -496,7 +496,7 @@ hr {
 .bento-card:hover {
     border-color: var(--blue);
     box-shadow: 0 0 20px rgba(140, 170, 238, 0.15);
-    transform: translateY(-3px);
+    transform: translate(-2px, -2px);
     text-decoration: none;
     color: var(--text);
 }
@@ -540,7 +540,7 @@ hr {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.7em;
     padding: 3px 10px;
-    border-radius: 20px;
+    border-radius: 2px;
     background: var(--surface1);
     color: var(--mauve);
     letter-spacing: 0.05em;
